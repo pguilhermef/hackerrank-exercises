@@ -27,8 +27,4 @@ const template = fs.readFileSync('updateReadmeScript/README-template.md', 'utf8'
 const readme = template.replaceAll('{count}', count);
 fs.writeFileSync('README.md', readme);
 
-// const readme = fs.readFileSync('README.md', 'utf8');
-// const updatedReadme = readme.replace(/Estou a \d+ dias sem falhar no hackerrank!/, `Estou a ${count} dias sem falhar no hackerrank!`);
-
-// fs.writeFileSync('README.md', updatedReadme);
 console.log(`O README foi atualizado com sucesso com a contagem de dias: ${count}`);

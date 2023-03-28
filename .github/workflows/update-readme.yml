@@ -1,4 +1,5 @@
 name: Update README
+env: GITHUB_TOKEN: ${{ secrets.PAT }}
 
 on:
   schedule:
@@ -19,8 +20,8 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "pguilhermesantos@hotmail.com"
+          git config --local user.name "pguilhermef"
           git add README.md
           git commit -m "Update README"
           git push
