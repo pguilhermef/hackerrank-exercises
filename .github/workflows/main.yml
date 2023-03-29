@@ -11,6 +11,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Git pull
+        run: git pull
+
       - name: Install dependencies
         run: npm install
 
