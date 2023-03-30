@@ -2,7 +2,7 @@ name: Update README
 
 on:
   schedule:
-    - cron: "0 5 * * *"
+    - cron: "0 3 * * *"
 
 jobs:
   update-readme:
@@ -22,8 +22,13 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --local user.email "pguilhermesantos@hotmail.com"
-          git config --local user.name "pguilhermef"
-          git add README.md
-          git commit -m "Update README"
-          git push
+          if [[ -n $(git status --porcelain) ]]; then
+            git config --local user.email "pguilhermesantos@hotmail.com"
+            git config --local user.name "pguilhermef"
+            git add README.md
+            git commit -m "Update README"
+            git push
+          else
+            echo "No changes to commit."
+            exit 0
+          fi
