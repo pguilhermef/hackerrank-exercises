@@ -18,8 +18,6 @@ As soluções para esses desafios podem ser feitas em várias linguagens de prog
 
 Como meu objetivo é fazer um desafio por dia, criei essa seção no README para que pudesse me incentivar sempre aumentar o número de dias que faço desafios sem falhar.
 
-(O número acima é atualizado às 00:00 no horário do Brasil)
-
 ## Eu desafio você! ⚔️
 
 Embarque comigo nesse desafio e vamos juntos melhorar nossa habilidade de programação! Acesse o site do [Hackerrank](https://www.hackerrank.com/dashboard) e mostre ao mundo que tipo de programador é você!
@@ -47,8 +45,6 @@ Solutions to these challenges can be done in various programming languages, incl
 ## Consecutive Days = 1 ⏳
 
 As my goal is to do one challenge per day, I created this section in the README so that I could always encourage myself to increase the number of days I do challenges without failing.
-
-(The number above is updated at 00:00AM Brazilian time.)
 
 ## I Challenge You! ⚔️
 
