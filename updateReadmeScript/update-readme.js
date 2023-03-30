@@ -9,7 +9,7 @@ let prevDate = null;
 for (const commit of commits) {
   if (!commit) continue;
 
-  const date = new Date(Number(commit) * 1000).toISOString().substr(0, 10);
+  const date = new Date(Number(commit) * 1000).toISOString().substring(0, 10);
 
   if (prevDate !== date) {
     count++;
