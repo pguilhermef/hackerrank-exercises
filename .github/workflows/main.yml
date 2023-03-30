@@ -1,8 +1,8 @@
 name: Update README
 
-on:
-  schedule:
-    - cron: "0 3 * * *"
+# on:
+#   schedule:
+#     - cron: "0 3 * * *"
 
 jobs:
   update-readme:
@@ -21,14 +21,13 @@ jobs:
         run: node updateReadmeScript/update-readme.js
 
       - name: Commit changes
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
-          if [[ -n $(git status --porcelain) ]]; then
-            git config --local user.email "pguilhermesantos@hotmail.com"
-            git config --local user.name "pguilhermef"
-            git add README.md
-            git commit -m "Update README"
-            git push
-          else
-            echo "No changes to commit."
-            exit 0
-          fi
+          eval "$(ssh-agent -s)"
+          ssh-add <(echo "$KEY")
+          git config --local user.email "pguilhermesantos@hotmail.com"
+          git config --local user.name "pguilhermef"
+          git add README.md
+          git commit -m "Update README"
+          git push

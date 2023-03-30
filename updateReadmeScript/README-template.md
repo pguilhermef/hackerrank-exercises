@@ -25,6 +25,7 @@ Como meu objetivo é fazer um desafio por dia, criei essa seção no README para
 Embarque comigo nesse desafio e vamos juntos melhorar nossa habilidade de programação! Acesse o site do [Hackerrank](https://www.hackerrank.com/dashboard) e mostre ao mundo que tipo de programador é você!
 
 <br/>
+<hr/>
 <br/>
 
 ### 🇺🇸 en-US
