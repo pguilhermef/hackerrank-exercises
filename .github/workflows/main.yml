@@ -10,58 +10,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-      - name: Count consecutive days of commits
-        id: count-commits
-        run: |
-          const fs = require('fs');
-          const { execSync } = require('child_process');
+      - name: Install dependencies
+        run: npm install
 
-          const commits = execSync('git log --format="%at"').toString().split('\n');
-
-          let count = 0;
-          let prevDate = null;
-
-          for (const commit of commits) {
-            if (!commit) continue;
-
-            const date = new Date(Number(commit) * 1000).toISOString().substr(0, 10);
-
-            if (prevDate !== date) {
-              count++;
-            } else {
-              break;
-            }
-
-            prevDate = date;
-          }
-
-          console.log(`Consecutive days of commits: ${count}`);
-
-          // Set the output variable for use in subsequent steps
-          // This value can be accessed with ${{ steps.count-commits.outputs.count }}
-          // in other steps
-          echo "::set-output name=count::${count}"
+      - name: Configure SSH secret
+        uses: shimataro/ssh-key-action@v2
+        with:
+          name: SSH_SECRET
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Update README
+        run: node updateReadmeScript/update-readme-refactored.js
+
+      - name: Commit changes
+        env:
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock
         run: |
-          # Read README template
-          template=$(cat updateReadmeScript/README-template.md)
-
-          # Replace {count} with the output from the previous step
-          readme=$(echo "$template" | sed "s/{count}/${{ steps.count-commits.outputs.count }}/g")
-
-          # Write the updated README
-          echo "$readme" > README.md
-
-      - name: Commit and push changes
-        uses: stefanzweifel/git-auto-commit-action@v4
-        with:
-          commit_message: Update README with consecutive days of commits
-          commit_options: '--no-verify'
-          commit_user_email: pguilhermesantos@hotmail.com
-          commit_user_name: pguilhermef
-          branch: main
-          file_pattern: README.md
+          eval "$(ssh-agent -s)"
+          ssh-add <(echo "$SSH_SECRET")
+          git config --local user.email "pguilhermesantos@hotmail.com"
+          git config --local user.name "pguilhermef"
+          git add README.md
+          git commit -m "Update README"
+          git push
