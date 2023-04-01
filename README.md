@@ -14,10 +14,6 @@ A cada dia, um novo desafio será postado na pasta correspondente. Cada pasta co
 
 As soluções para esses desafios podem ser feitas em várias linguagens de programação, incluindo Python, Java, C++, entre outras. No meu caso, inicialmente, irei usar apenas a linguagem Javascript, pois é a qual eu tenho domínio.
 
-## Dias consecutivos = 1 ⏳
-
-Como meu objetivo é fazer um desafio por dia, criei essa seção no README para que pudesse me incentivar sempre aumentar o número de dias que faço desafios sem falhar.
-
 ## Eu desafio você! ⚔️
 
 Embarque comigo nesse desafio e vamos juntos melhorar nossa habilidade de programação! Acesse o site do [Hackerrank](https://www.hackerrank.com/dashboard) e mostre ao mundo que tipo de programador é você!
@@ -41,10 +37,6 @@ The objective of these challenges is to help people practice and improve their p
 Every day, a new challenge will be posted in the corresponding folder. Each folder contains files with the solution to the challenge and the commented prompt.
 
 Solutions to these challenges can be done in various programming languages, including Python, Java, C++, among others. In my case, initially, I will use only the Javascript language, as it is the one I have domain.
-
-## Consecutive Days = 1 ⏳
-
-As my goal is to do one challenge per day, I created this section in the README so that I could always encourage myself to increase the number of days I do challenges without failing.
 
 ## I Challenge You! ⚔️
 
