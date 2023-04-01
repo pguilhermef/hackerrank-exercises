@@ -18,9 +18,7 @@ As soluções para esses desafios podem ser feitas em várias linguagens de prog
 
 Embarque comigo nesse desafio e vamos juntos melhorar nossa habilidade de programação! Acesse o site do [Hackerrank](https://www.hackerrank.com/dashboard) e mostre ao mundo que tipo de programador é você!
 
-<br/>
 <hr/>
-<br/>
 
 ### 🇺🇸 en-US
 
